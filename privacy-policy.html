@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — StepMatch</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 24px; color: #222; background: #fafafa; }
+  @media (prefers-color-scheme: dark) { body { color: #eee; background: #111; } a { color: #6bf; } h1,h2,h3 { color: #fff; } }
+  h1 { font-size: 2em; border-bottom: 2px solid currentColor; padding-bottom: 8px; }
+  h2 { margin-top: 2em; }
+  h3 { margin-top: 1.5em; }
+  .meta { color: #888; font-size: 0.9em; }
+  code { background: rgba(128,128,128,0.15); padding: 1px 4px; border-radius: 3px; font-size: 0.92em; }
+  ul { padding-left: 1.4em; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #999; padding: 8px 10px; text-align: left; }
+  th { background: rgba(128,128,128,0.15); }
+  .contact-box { background: rgba(128,128,128,0.08); border-left: 3px solid #6bf; padding: 12px 16px; margin: 1em 0; border-radius: 4px; }
+</style>
+</head>
+<body>
+
+<h1>Privacy Policy — StepMatch</h1>
+<p class="meta"><strong>Effective date:</strong> April 18, 2026 &nbsp;·&nbsp; <strong>Last updated:</strong> April 18, 2026</p>
+
+<p>StepMatch ("the app", "we", "us") is a fitness-gaming Android app that turns your real-world steps into in-game energy. This policy explains what data we collect, why, how it's stored, and your rights.</p>
+
+<p><strong>TL;DR:</strong> We read your step count and active calories from Health Connect to power gameplay. We store your game progress and leaderboard nickname on Firebase so you can compete globally. We do not sell your data. Camera and microphone are used only locally on your device for the optional Voice & Camera mode. You can request data deletion at any time.</p>
+
+<h2>1. Who we are</h2>
+<p>StepMatch is developed by <strong>PlatPuff</strong> (sole developer: Omer Nagar). Contact: <a href="mailto:stepmatch97@gmail.com">stepmatch97@gmail.com</a>.</p>
+
+<h2>2. Data we collect and why</h2>
+
+<table>
+  <thead>
+    <tr><th>Data</th><th>Purpose</th><th>Where stored</th><th>Shared with third parties?</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Daily step count (from Health Connect)</td>
+      <td>Convert steps into in-game energy; calculate rewards and milestones</td>
+      <td>Your device only (not sent to our servers)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Active calories burned (from Health Connect)</td>
+      <td>Calculate activity-minute rewards and badges</td>
+      <td>Your device only (not sent to our servers)</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Firebase anonymous user ID</td>
+      <td>Give you a stable identity on the leaderboard without requiring sign-up</td>
+      <td>Firebase Authentication (Google)</td>
+      <td>Google Firebase (service provider)</td>
+    </tr>
+    <tr>
+      <td>Google Sign-In email (if you choose to link your account)</td>
+      <td>Recover your progress across devices</td>
+      <td>Firebase Authentication (Google)</td>
+      <td>Google Firebase (service provider)</td>
+    </tr>
+    <tr>
+      <td>Game progress (coins, diamonds, stars, badges, pet state, best scores, hoops passed)</td>
+      <td>Save your progress and power the global leaderboard</td>
+      <td>Firebase Firestore</td>
+      <td>Google Firebase (service provider)</td>
+    </tr>
+    <tr>
+      <td>Leaderboard nickname (chosen by you, profanity-filtered)</td>
+      <td>Display you on the global leaderboard</td>
+      <td>Firebase Firestore</td>
+      <td>Public on leaderboard to other players</td>
+    </tr>
+    <tr>
+      <td>Friend / group data (if you use Social features)</td>
+      <td>Send and receive challenge invites</td>
+      <td>Firebase Firestore</td>
+      <td>Visible to your friends / group members only</td>
+    </tr>
+    <tr>
+      <td>FCM push token</td>
+      <td>Deliver challenge notifications to your device</td>
+      <td>Firebase Cloud Messaging (Google)</td>
+      <td>Google Firebase (service provider)</td>
+    </tr>
+    <tr>
+      <td>Camera feed (Voice &amp; Camera mode only)</td>
+      <td>Display live video as a gameplay background</td>
+      <td>Your device only; never uploaded</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Microphone audio (Voice &amp; Camera mode only)</td>
+      <td>Detect voice amplitude for hands-free controls</td>
+      <td>Your device only; never uploaded or recorded</td>
+      <td>No</td>
+    </tr>
+    <tr>
+      <td>Crash reports &amp; basic app diagnostics</td>
+      <td>Find and fix bugs</td>
+      <td>Firebase (if enabled)</td>
+      <td>Google Firebase (service provider)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>We do <strong>not</strong> collect: your name (unless you enter one as a nickname), your location, contacts, SMS, call logs, or browser history. We do not use advertising identifiers.</p>
+
+<h2>3. Health Connect data — special disclosure</h2>
+<p>StepMatch reads <strong>step count</strong> and <strong>active calories burned</strong> from Android Health Connect. This is required for the core game mechanic (steps → energy).</p>
+<ul>
+  <li>Health data is read only while you grant Health Connect permission. You can revoke it anytime in Settings → Health Connect.</li>
+  <li>Health data is <strong>not</strong> sent to our servers. It is read on your device and immediately converted into in-game currency (coins/diamonds). Only the resulting game state is saved to Firestore.</li>
+  <li>We do <strong>not</strong> share your health data with third parties, use it for advertising, or sell it.</li>
+  <li>Health data is not used for any purpose beyond calculating in-game rewards and milestones.</li>
+</ul>
+
+<h2>4. Camera and microphone — Voice &amp; Camera mode</h2>
+<p>Voice &amp; Camera mode is an <strong>optional</strong> game mode. If you choose to use it:</p>
+<ul>
+  <li>The camera feed is shown on-screen in real time as your gameplay background, and is never saved, uploaded, or sent anywhere.</li>
+  <li>The microphone is used only to measure audio amplitude (loudness) for hands-free controls. We do <strong>not</strong> record audio, transcribe speech, or store any microphone data.</li>
+  <li>Both sensors are disabled when you exit this mode.</li>
+  <li>The permissions are declared as optional in the app manifest and can be denied without affecting the rest of the game.</li>
+</ul>
+
+<h2>5. Third-party service providers</h2>
+<p>We use the following Google Firebase services under Google's data processing terms:</p>
+<ul>
+  <li><strong>Firebase Authentication</strong> — anonymous and Google sign-in</li>
+  <li><strong>Cloud Firestore</strong> — game state and leaderboard database</li>
+  <li><strong>Firebase Storage</strong> — delivery of game assets (video backgrounds, pet animations)</li>
+  <li><strong>Firebase Cloud Messaging (FCM)</strong> — push notifications for challenges</li>
+</ul>
+<p>Google's privacy practices are described at <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</p>
+
+<h2>6. Data retention</h2>
+<ul>
+  <li><strong>Game progress data</strong> is retained as long as your account exists. If your account has been inactive for more than 24 months, we may delete it.</li>
+  <li><strong>Leaderboard entries</strong> are public as long as your account is active.</li>
+  <li><strong>Crash logs</strong> are retained by Firebase for up to 90 days.</li>
+  <li>You can request deletion at any time (see section 7).</li>
+</ul>
+
+<h2>7. Your rights</h2>
+<p>You can:</p>
+<ul>
+  <li><strong>Access</strong> — request a copy of the data we hold about you.</li>
+  <li><strong>Correct</strong> — ask us to fix inaccurate data.</li>
+  <li><strong>Delete</strong> — ask us to delete your account and all associated data.</li>
+  <li><strong>Revoke permissions</strong> — turn off Health Connect, camera, microphone, or notification permissions in your Android system settings at any time.</li>
+  <li><strong>Object / restrict</strong> — ask us to stop or limit processing.</li>
+</ul>
+
+<div class="contact-box">
+<strong>To exercise any of these rights</strong>, email <a href="mailto:stepmatch97@gmail.com?subject=StepMatch%20Data%20Request">stepmatch97@gmail.com</a> with the subject "StepMatch Data Request". We'll respond within 30 days.
+</div>
+
+<h2>8. Security</h2>
+<ul>
+  <li>All network traffic between the app and Firebase is encrypted over HTTPS (TLS 1.2+).</li>
+  <li>Firestore access is restricted by security rules that prevent users from reading or modifying other users' private data.</li>
+  <li>The upload keystore for the Android app is kept offline.</li>
+  <li>Anti-cheat bounds are enforced server-side to prevent leaderboard manipulation.</li>
+</ul>
+
+<h2>9. Children's privacy</h2>
+<p>StepMatch is intended for users aged 13 and older. We do not knowingly collect data from children under 13. If you believe a child has provided us with personal data, please contact us at <a href="mailto:stepmatch97@gmail.com">stepmatch97@gmail.com</a> and we will delete it.</p>
+
+<h2>10. International users</h2>
+<p>StepMatch is operated from Israel. If you use the app from outside Israel, you understand that your data is stored on Google Firebase infrastructure, which may be located in the United States or other countries. By using StepMatch, you consent to this transfer.</p>
+
+<h2>11. Changes to this policy</h2>
+<p>We may update this policy from time to time. The "Last updated" date at the top reflects the most recent change. Material changes will be announced in-app or via a notification.</p>
+
+<h2>12. Contact</h2>
+<div class="contact-box">
+<strong>Email:</strong> <a href="mailto:stepmatch97@gmail.com">stepmatch97@gmail.com</a><br>
+<strong>Developer:</strong> PlatPuff (Omer Nagar)<br>
+<strong>Country:</strong> Israel
+</div>
+
+<p class="meta" style="margin-top: 3em;">© 2026 PlatPuff. All rights reserved.</p>
+
+</body>
+</html>
