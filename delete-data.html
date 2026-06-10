@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request Data Deletion — StepMatch</title>
+<style>
+  :root { color-scheme: light dark; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; max-width: 760px; margin: 0 auto; padding: 24px; color: #222; background: #fafafa; }
+  @media (prefers-color-scheme: dark) { body { color: #eee; background: #111; } a { color: #6bf; } h1, h2, h3 { color: #fff; } th { background: rgba(255,255,255,0.08); } }
+  h1 { font-size: 2em; border-bottom: 2px solid currentColor; padding-bottom: 8px; }
+  h2 { margin-top: 2em; }
+  h3 { margin-top: 1.5em; }
+  .meta { color: #888; font-size: 0.9em; }
+  code { background: rgba(128,128,128,0.15); padding: 1px 4px; border-radius: 3px; font-size: 0.92em; }
+  ul, ol { padding-left: 1.4em; }
+  table { border-collapse: collapse; width: 100%; margin: 1em 0; }
+  th, td { border: 1px solid #999; padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { background: rgba(128,128,128,0.15); }
+  .step { background: rgba(128,128,128,0.06); border-left: 3px solid #6bf; padding: 12px 16px; margin: 1em 0; border-radius: 4px; }
+  .email-card { background: rgba(120,180,255,0.10); border: 1px solid #6bf; padding: 16px 20px; margin: 1em 0; border-radius: 8px; font-size: 1.1em; }
+  .email-card a { font-size: 1.2em; font-weight: 600; }
+</style>
+</head>
+<body>
+
+<h1>Request Data Deletion — StepMatch</h1>
+<p class="meta"><strong>App:</strong> StepMatch &nbsp;·&nbsp; <strong>Developer:</strong> Platpuff &nbsp;·&nbsp; <strong>Package:</strong> <code>com.platpuff.stepmatch</code> &nbsp;·&nbsp; <strong>Last updated:</strong> 2026-06-11</p>
+
+<p>This page explains how to request deletion of data that <strong>StepMatch</strong> (developed by <strong>Platpuff</strong>) holds about you, what gets deleted, what is retained, and how long that takes.</p>
+
+<h2>How to request deletion</h2>
+
+<p>You have two options. The first is instant and self-serve; the second covers anything held on our servers.</p>
+
+<h3>Option 1 — Delete your local data instantly (no email needed)</h3>
+
+<div class="step">
+  <strong>On your Android device:</strong>
+  <ol>
+    <li>Open the device <strong>Settings</strong> app.</li>
+    <li>Go to <strong>Apps</strong> (or <strong>Apps &amp; notifications</strong>).</li>
+    <li>Find and tap <strong>StepMatch</strong>.</li>
+    <li>Tap <strong>Storage &amp; cache</strong> → <strong>Clear storage</strong> (sometimes called "Clear data").</li>
+  </ol>
+  <p>This immediately erases all locally-stored game progress, settings, cached step counter watermarks, pet state, shop inventory, and Firebase Analytics state. You can also achieve the same result by uninstalling the app.</p>
+</div>
+
+<h3>Option 2 — Request deletion of server-side data via email</h3>
+
+<p>Some game data — your anonymous leaderboard entry, your linked-Google friend list (if you opted in), and any challenge records — lives on our servers in Firebase. To request that this data be deleted, send us an email:</p>
+
+<div class="email-card">
+  Email: <a href="mailto:stepmatch97@gmail.com?subject=StepMatch%20Data%20Deletion%20Request">stepmatch97@gmail.com</a><br>
+  Subject line: <code>StepMatch Data Deletion Request</code>
+</div>
+
+<p>Include in the email:</p>
+<ul>
+  <li>The Google account email you used (only if you ever signed in with Google — anonymous players can skip this).</li>
+  <li>Your in-game username, if any.</li>
+  <li>Whether you want <em>all</em> of your server-side data deleted, or only a specific kind (for example, "delete my leaderboard entry only").</li>
+</ul>
+
+<p>We respond to requests within <strong>30 days</strong>, and the deletion itself is typically completed within <strong>14 days</strong> of receipt (often within 48 hours).</p>
+
+<h2>What gets deleted and what is kept</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Data category</th>
+      <th>What it is</th>
+      <th>Deletion path</th>
+      <th>Retention if you do nothing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Local game progress, level scores, pet state, shop inventory</td>
+      <td>Room database + DataStore stored on your device</td>
+      <td>Option 1 (Clear storage / uninstall)</td>
+      <td>Kept until you clear or uninstall</td>
+    </tr>
+    <tr>
+      <td>Step-counter watermarks, sensor day-rollover state</td>
+      <td>Stored on your device only — the raw step count is read from the hardware sensor and is never transmitted to our servers</td>
+      <td>Option 1 (Clear storage / uninstall)</td>
+      <td>Resets every device reboot anyway</td>
+    </tr>
+    <tr>
+      <td>Firebase Analytics events (gameplay events, app interactions, crash logs, approximate location derived from IP, device or other IDs)</td>
+      <td>Anonymous, per-install identifier; you cannot be personally identified from it</td>
+      <td>
+        Self-serve options:<br>
+        (a) Option 1 — clearing storage resets the Firebase install ID.<br>
+        (b) On Android, go to <strong>Settings → Google → Ads → Reset advertising ID</strong>.<br>
+        Or, ask us by Option 2.
+      </td>
+      <td>Google's default retention is up to 14 months; Play developers can shorten this.</td>
+    </tr>
+    <tr>
+      <td>Leaderboard entry (anonymous identifier + game score)</td>
+      <td>Stored in Firebase Firestore; your row is keyed by anonymous identifier, not by name</td>
+      <td>Email us — Option 2</td>
+      <td>Kept until you request deletion</td>
+    </tr>
+    <tr>
+      <td>Google account linkage (only if you opted into Google Sign-In)</td>
+      <td>The link between your in-game progress and your Google account UID</td>
+      <td>You can unlink at any time inside the app (Settings → Account), or email us — Option 2</td>
+      <td>Kept until you unlink or request deletion</td>
+    </tr>
+    <tr>
+      <td>Push notification token (only if you opted into notifications)</td>
+      <td>Firebase Cloud Messaging device token used to send challenge notifications</td>
+      <td>Revoking the app's notification permission deletes the token; or email us — Option 2</td>
+      <td>Kept while the app is installed and notification permission is granted</td>
+    </tr>
+    <tr>
+      <td>Friend list / challenge records (only if you used the social features)</td>
+      <td>Stored in Firebase Firestore</td>
+      <td>Email us — Option 2</td>
+      <td>Kept until you request deletion</td>
+    </tr>
+    <tr>
+      <td>Camera and microphone data (Infinity Mode only)</td>
+      <td>Never recorded, transmitted, or stored — processed locally on your device in real time and discarded immediately</td>
+      <td>Nothing to delete (we never have it)</td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td>Anonymized Play Console / aggregated stats</td>
+      <td>Google Play Console may retain anonymous, aggregated install / uninstall / rating statistics that cannot be tied back to you individually</td>
+      <td>Cannot be selectively deleted — covered by Google Play's own policies</td>
+      <td>Managed by Google Play</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2>What we cannot delete</h2>
+
+<p>The following are outside our control:</p>
+<ul>
+  <li><strong>Google Play Store records</strong> — install/uninstall/review/rating data is held by Google, not by us.</li>
+  <li><strong>Backups already created by Android Auto Backup or device-to-device transfer</strong> — these are managed by Google / your device manufacturer.</li>
+  <li><strong>Aggregated, anonymized analytics</strong> — once individual events are aggregated into counters that cannot be tied back to a specific install, that aggregated data remains.</li>
+</ul>
+
+<h2>Questions?</h2>
+
+<p>Email us at <a href="mailto:stepmatch97@gmail.com">stepmatch97@gmail.com</a>. We aim to respond within 30 days.</p>
+
+<p class="meta">This page is part of the StepMatch privacy practices. See also the <a href="privacy-policy.html">full Privacy Policy</a>.</p>
+
+</body>
+</html>
